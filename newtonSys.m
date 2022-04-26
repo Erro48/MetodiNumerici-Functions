@@ -23,7 +23,7 @@ function [x1, Er, it] = newtonSys(fname, jac, x0, tolx, tolf, nmax)
         else
             s = -matjac \ fx0;
             x1 = x0 + s;
-            fx1 = feval(fname, x1);
+            fx1 = fname(x1);
             Er = [Er; norm(s, 1)];
             it = it + 1;
         end

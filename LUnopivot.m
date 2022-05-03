@@ -20,6 +20,7 @@ function [L, U, flag] = LUnopivot(A)
             L = [];
             U = [];
             flag = 1;
+            return;
         end
         
 %         for i = k+1:n

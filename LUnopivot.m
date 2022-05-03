@@ -22,13 +22,17 @@ function [L, U, flag] = LUnopivot(A)
             flag = 1;
         end
         
-        for i = k+1:n
-           U(i,k) = U(i,k) / U(k,k); % salvo il moltiplicatore m
+%         for i = k+1:n
+%            U(i,k) = U(i,k) / U(k,k); % salvo il moltiplicatore m
            % modifico la riga i-esima
-           for j = k+1:n
-              U(i,j) = U(i,j) - U(i,k) * U(k,j); 
-           end
-        end
+%            for j = k+1:n
+%               U(i,j) = U(i,j) - U(i,k) * U(k,j); 
+%            end
+%         end
+
+        % sfruttando le potenzialità di MatLab
+        U(k+1:n, k) = U(k+1:n, k) / U(k, k);
+        U(k+1:n, k+1:n) = U(k+1:n, k+1:n) - U(k+1:n,k) * U(k,k+1:n);
     end
     
     % tril restituisce una matrice triangolare inferiore senza la diagonale

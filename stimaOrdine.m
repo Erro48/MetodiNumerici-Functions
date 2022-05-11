@@ -1,4 +1,4 @@
-function p = stimaordine(xf)
+function p = stimaOrdine(xf)
     %xf: vettore lungo 4 con le ultime 4 iterate
     ek = abs(xf(1) - xf(2));
     ekp1 = abs(xf(2) - xf(3));

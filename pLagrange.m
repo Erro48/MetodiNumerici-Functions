@@ -2,7 +2,7 @@ function [p] = pLagrange(xnodi, j)
     if j == 1
         xzeri = xnodi(2:end);
     else
-        xzeri = [nodi(1:j-1), xnodi(j+1:end)]
+        xzeri = [xnodi(1:j-1), xnodi(j+1:end)]
     end
     
     p = poly(xzeri);
